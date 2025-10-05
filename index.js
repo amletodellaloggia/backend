@@ -10,9 +10,9 @@ const app = express();
 
 app.use(express.static("public"));
 
-// MODIFICA PER SERVIRE LE IMMAGINI DAL BACKEND
+// MODIFICA: serve immagini da assets/public/imgs tramite /images
 const path = require('path');
-app.use('/images', express.static(path.join(__dirname, 'assets')));
+app.use('/images', express.static(path.join(__dirname, 'assets/public/imgs')));
 
 app.use(express.json());
 const cors = require("cors");
