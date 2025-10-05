@@ -9,6 +9,11 @@ const createTables = require("./db/nerdNest_ER_db");
 const app = express();
 
 app.use(express.static("public"));
+
+// MODIFICA PER SERVIRE LE IMMAGINI DAL BACKEND
+const path = require('path');
+app.use('/images', express.static(path.join(__dirname, 'assets')));
+
 app.use(express.json());
 const cors = require("cors");
 const corsOptions = {
